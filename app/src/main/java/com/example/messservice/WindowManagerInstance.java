@@ -10,7 +10,7 @@ public class WindowManagerInstance {
 
     public static WindowManager newInstance(){
         if (windowManager == null){
-            windowManager = (WindowManager) applicationContext.getSystemService(Context.WINDOW_SERVICE);
+            windowManager = (WindowManager) applicationContext.getSystemService(Context.WINDOW_SERVICE);//mo cua no xem
         }
         return windowManager;
     }

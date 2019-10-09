@@ -12,15 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 
-    private final static String TAG = "MainActivity";
     private final static int REQUESTCODE = 101;
-    private static MyViewHolder myViewHolder;
+    private MyViewHolder myViewHolder;
     private Switch mswitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_main);
         mswitch = findViewById(R.id.open_easytouch);
         mswitch.setOnCheckedChangeListener(this);
@@ -31,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Log.d(TAG, "onCheckedChanged");
         if(isChecked) {
             if (!checkFloatWindowPermission()) {
                 showPromptingDialog();
